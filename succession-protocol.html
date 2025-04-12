@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Protected Redirect</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      width: 100%;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Enter Access Credentials</h2>
+    <input type="password" id="pass1" placeholder="Enter first password"><br>
+    <input type="password" id="pass2" placeholder="Enter second password"><br>
+    <button onclick="checkPasswords()">Confirm</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <script>https://app.netlify.com/drop
+    function checkPasswords() {
+      const input1 = document.getElementById('pass1').value;
+      const input2 = document.getElementById('pass2').value;
+
+      // Replace these with your actual passwords
+      const password1 = "fyBr89Duo0at";
+      const password2 = "9819brtOrd0p";
+
+      if (input1 === password1 && input2 === password2) {
+        window.location.href = "https://sites.google.com/view/gpcsuccessionprotocol-securebe/home";
+      } else {
+        document.getElementById("error").innerText = "Incorrect passwords. Please try again.";
+      }
+    }
+  </script>
+</body>
+</html>
