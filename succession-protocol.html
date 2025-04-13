@@ -56,7 +56,6 @@
         "Zeta99Lock"
       ];
 
-      // Count how many entered passwords are in the list of valid passwords
       let matchCount = 0;
       const used = new Set();
       inputs.forEach(input => {
@@ -70,11 +69,6 @@
         window.location.href = "https://sites.google.com/view/gpcsuccessionprotocol-securebe/home";
       } else {
         document.getElementById("error").innerText = "At least 3 correct passwords required. Please try again.";
-      }
-    }
-  </script>
-</body>
-</html>
       }
     }
   </script>
