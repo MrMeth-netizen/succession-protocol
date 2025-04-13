@@ -35,23 +35,46 @@
     <h2>Enter Access Credentials</h2>
     <input type="password" id="pass1" placeholder="Enter first password"><br>
     <input type="password" id="pass2" placeholder="Enter second password"><br>
+    <input type="password" id="pass3" placeholder="Enter third password"><br>
     <button onclick="checkPasswords()">Confirm</button>
     <p id="error" style="color:red;"></p>
   </div>
 
-  <script>https:
+  <script>
     function checkPasswords() {
-      const input1 = document.getElementById('pass1').value;
-      const input2 = document.getElementById('pass2').value;
+      const inputs = [
+        document.getElementById('pass1').value,
+        document.getElementById('pass2').value,
+        document.getElementById('pass3').value
+      ];
 
-      
-      const password1 = "fyBr89Duo0at";
-      const password2 = "9819brtOrd0p";
+      const validPasswords = [
+        "Foxtrot03Clearance",
+        "OrbitSecure67",
+        "PassThree10",
+        "SecureKey44",
+        "Zeta99Lock"
+      ];
 
-      if (input1 === password1 && input2 === password2) {
+      // Count how many entered passwords are in the list of valid passwords
+      let matchCount = 0;
+      const used = new Set();
+      inputs.forEach(input => {
+        if (validPasswords.includes(input) && !used.has(input)) {
+          matchCount++;
+          used.add(input);
+        }
+      });
+
+      if (matchCount >= 3) {
         window.location.href = "https://sites.google.com/view/gpcsuccessionprotocol-securebe/home";
       } else {
-        document.getElementById("error").innerText = "Incorrect passwords. Please try again.";
+        document.getElementById("error").innerText = "At least 3 correct passwords required. Please try again.";
+      }
+    }
+  </script>
+</body>
+</html>
       }
     }
   </script>
